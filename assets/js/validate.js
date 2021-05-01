@@ -45,7 +45,7 @@
   init_browser_detection = () => {
     var user = detect.parse(navigator.userAgent)
     if (!user.browser.family.match(/chrome/i) || !user.os.name.match(/(android|ios)/i))
-      messageValidate.innerHTML = `You are using ${user.browser.family} ${user.browser.version} on ${user.os.name}. Please switch to Chrome on Android/iOS if you dont get redirected to WhatsApp.`
+      messageValidate.innerHTML = `You are using ${user.browser.family} ${user.browser.version} on ${user.os.name}. Please switch to Chrome on Android if you dont get redirected to WhatsApp.`
   }
 
   window.addEventListener('load', () => {
