@@ -618,11 +618,21 @@ section {
   display: block;
   background-color: transparent;
   border: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px){
+  .contact .contact-email-form #code,
+  .contact .contact-email-form #number{
+    font-size: 1.4rem;
+  }
+  .contact .contact-email-form #message{
+    font-size: 1.2rem;
+  }
 }
 
 .contact .contact-email-form #phone-box{
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -636,17 +646,17 @@ section {
 .contact .contact-email-form #number{
   height: 3rem;
   line-height: 3rem;
-  font-size: 1.4rem;
   text-align: center;
 }
 
 .contact .contact-email-form #code{
-  flex: 30% ;
+  flex: 20% ;
 }
 
 @media (min-width: 548px) {
   .contact .contact-email-form #code{
-  max-width: 5rem;
+    max-width: 4rem;
+
   }
 }
 
@@ -655,8 +665,8 @@ section {
 }
 
 .contact .contact-email-form #message{
-  max-width: calc(100% - 60px);
-  height: calc(100% - 10px);
+  max-width: calc(100% - 3.5rem);
+  height: calc(100% - 0.5rem);
   margin: 5px 30px;
   padding: 0;
   background-color: transparent;
@@ -664,7 +674,7 @@ section {
 }
 
 .contact .contact-email-form #message-box{
-  min-height: 60px;
+  min-height: 3.75rem;
   width: calc(100% - 4rem - 5px);
   border-radius: 30px;
   overflow: hidden;
@@ -675,7 +685,6 @@ section {
 .contact .contact-email-form #send{
   height: 3.25rem;
   width: 3.25rem;
-  margin-left: 0.5rem;
   border: none;
   border-radius: 50%;
   background-color: #05524a;
