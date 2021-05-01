@@ -712,6 +712,10 @@ section {
   padding: 0.5rem 0 0 1.5rem;
 }
 
+.contact .contact-email-form #message-validate {
+  padding: 0.5rem 4rem 0 1.5rem;
+}
+
 .contact .contact-email-form .error-message {
   display: none;
   color: #fff;

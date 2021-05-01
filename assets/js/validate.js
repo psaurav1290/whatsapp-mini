@@ -11,7 +11,7 @@
     if (codeE.value == '') {
       codeE.value = '91'
     }
-    if (numberE.value == '' || numberE.value.length<10) {
+    if (numberE.value == '' || numberE.value.length < 10) {
       console.log(numberE.dataset.msg, numberValidate)
       numberValidate.innerHTML = numberE.dataset.msg
       return false
@@ -31,16 +31,25 @@
     }
   }
 
-  window.addEventListener('load', () => {
-    let fields = document.querySelectorAll('.numeric-input')
-    fields.forEach(element => element.onkeydown = keyDownFilter)
-
-    let sendBtn = document.getElementById('send')
-    sendBtn.onclick = validateAndRedirct
+  init_validation = () => {
+    document.querySelectorAll('.numeric-input').forEach(element => element.onkeydown = keyDownFilter)
+    document.getElementById('send').onclick = validateAndRedirct
 
     codeE = document.getElementById('code')
     numberE = document.getElementById('number')
     messageE = document.getElementById('message')
     numberValidate = document.getElementById('number-validate')
+    messageValidate = document.getElementById('message-validate')
+  }
+
+  init_browser_detection = () => {
+    var user = detect.parse(navigator.userAgent)
+    if (!user.browser.family.match(/chrome/i) || !user.os.name.match(/android/i) || !user.os.name.match(/ios/i))
+      messageValidate.innerHTML = `You are using ${user.browser.family} ${user.browser.version} on ${user.os.name}. Please switch to Chrome on Android/iOS if you dont get redirected to WhatsApp.`
+  }
+
+  window.addEventListener('load', () => {
+    init_validation()
+    init_browser_detection()
   })
 })()
